@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import About from "./components/pages/About";
 import Cart from "./components/pages/Cart";
@@ -15,15 +15,15 @@ function App() {
     <Router>
       <Header />
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/product/:id" element={<Product />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/products" component={Products} />
+          <Route path="/product/:id" component={Product} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
+          <Route component={NotFound} />
+        </Switch>
       </main>
       <Footer />
     </Router>
