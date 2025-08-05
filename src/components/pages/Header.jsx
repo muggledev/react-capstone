@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
+import "../../styles/pages/header.scss";
 
 function Header() {
   return (
     <header>
       <div className="navbar">
-        <div className="home">
-          <Link to="/home">
-            <i className="fa-solid fa-cake-candles"></i> HOME
-          </Link>
+        <div className="brand">
+          <i className="fa-solid fa-cake-candles"></i>
+          <span className="brand-name">Sprinkle & Whisk</span>
         </div>
         <nav>
+          <div className="nav-label">
+            <Link to="/home">HOME</Link>
+          </div>
           <div className="nav-label">
             <Link to="/products">PRODUCTS</Link>
           </div>

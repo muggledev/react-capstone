@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/pages/home.scss";
-import cakeVideo from "../../assets/cakedecorating.mp4";
+import cakeVideo from "../../assets/long-cake-decorating.mp4";
 
 function Home() {
   return (
@@ -14,7 +14,7 @@ function Home() {
         playsInline
       />
       <div className="slogan">
-        <h2>Whisk a little, shop a lot — sprinkle on the magic you've got!</h2>
+        <h1>Whisk a little, shop a lot — sprinkle on the magic you've got!</h1>
       </div>
     </div>
   );
