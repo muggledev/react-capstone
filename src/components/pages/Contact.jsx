@@ -4,7 +4,7 @@ import decoratingClass from "../../assets/cake-decorating-class.jpg";
 
 function Contact() {
   return (
-    <div>
+    <div className="main">
       <div className="contact-hero-image">
         <img src={decoratingClass} alt="Cake Decorating Class" />
       </div>
@@ -28,7 +28,7 @@ function Contact() {
                 type="text"
                 name="firstname"
                 id="fname"
-                placeholder="Your first name.."
+                placeholder="Your first name..."
               />
             </div>
             <div className="input-wrapper">
@@ -36,14 +36,14 @@ function Contact() {
                 type="text"
                 name="lastname"
                 id="lname"
-                placeholder="Your last name.."
+                placeholder="Your last name..."
               />
             </div>
             <div className="input-wrapper">
               <textarea
                 name="subject"
                 id="subject"
-                placeholder="Write something.."
+                placeholder="Write something..."
               ></textarea>
             </div>
             <input type="submit" value="Submit" />

@@ -9,23 +9,26 @@ import Home from "./components/pages/Home";
 import Product from "./components/pages/Product";
 import Products from "./components/pages/Products";
 import NotFound from "./components/pages/NotFound";
+import "./styles/pages/app.scss";
 
 function App() {
   return (
     <Router>
-      <Header />
-      <main>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/products" component={Products} />
-          <Route path="/product/:id" component={Product} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/about" component={About} />
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-      <Footer />
+      <div className="page-container">
+        <Header />
+        <main className="main-content">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/products" component={Products} />
+            <Route path="/product/:id" component={Product} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
