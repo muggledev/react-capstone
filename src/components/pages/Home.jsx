@@ -14,7 +14,10 @@ function Home() {
         playsInline
       />
       <div className="slogan">
-        <h1>Whisk a little, shop a lot — sprinkle on the magic you've got!</h1>
+        <h1>
+          Whisk a little, shop a lot — <br />
+          Sprinkle on the magic you've got!
+        </h1>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import Home from "./components/pages/Home";
 import Product from "./components/pages/Product";
 import Products from "./components/pages/Products";
 import NotFound from "./components/pages/NotFound";
+
 import "./styles/pages/app.scss";
 
 function App() {

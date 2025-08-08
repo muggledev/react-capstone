@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/pages/contact.scss";
 import decoratingClass from "../../assets/cake-decorating-class.jpg";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    subject: "",
+  });
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const isFormValid =
+    formData.firstname && formData.lastname && formData.subject;
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+
+    setFormData({
+      firstname: "",
+      lastname: "",
+      subject: "",
+    });
+
+    setShowPopup(true);
+
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 3000);
+  };
+
   return (
     <div className="main">
       <div className="contact-hero-image">
@@ -22,32 +57,46 @@ function Contact() {
       <div className="contact-grid">
         <div className="left-column">
           <h1>Send Us a Message</h1>
-          <div className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="input-wrapper">
               <input
                 type="text"
                 name="firstname"
-                id="fname"
                 placeholder="Your first name..."
+                value={formData.firstname}
+                onChange={handleChange}
               />
             </div>
             <div className="input-wrapper">
               <input
                 type="text"
                 name="lastname"
-                id="lname"
                 placeholder="Your last name..."
+                value={formData.lastname}
+                onChange={handleChange}
               />
             </div>
             <div className="input-wrapper">
               <textarea
                 name="subject"
-                id="subject"
                 placeholder="Write something..."
-              ></textarea>
+                value={formData.subject}
+                onChange={handleChange}
+              />
             </div>
-            <input type="submit" value="Submit" />
-          </div>
+            <input
+              type="submit"
+              value="Submit"
+              disabled={!isFormValid}
+              style={{
+                opacity: isFormValid ? 1 : 0.5,
+                cursor: isFormValid ? "pointer" : "not-allowed",
+              }}
+            />
+          </form>
+          {showPopup && (
+            <div className="popup-message">Message sent successfully!</div>
+          )}
         </div>
 
         <div className="contact-info">
