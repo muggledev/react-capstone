@@ -19,7 +19,7 @@ header {
     width: 100%;
     padding: 0 2rem;
     height: 100%;
-    margin: 0 auto;
+    // margin: 0 auto;
 
     .brand {
       display: flex;
@@ -35,6 +35,25 @@ header {
         font-size: 1.8rem;
         font-weight: bold;
         color: #686868;
+      }
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+
+      .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #686868;
+        border-radius: 2px;
       }
     }
 
@@ -59,14 +78,37 @@ header {
           }
         }
 
-        .highlight {
-          color: #ee227e;
+        // .highlight {
+        //   color: #ee227e;
 
-          &:hover {
-            color: rgb(255, 79, 158);
-            transition: 0.2s ease-in;
-          }
-        }
+        //   &:hover {
+        //     color: rgb(255, 79, 158);
+        //     transition: 0.2s ease-in;
+        //   }
+        // }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(101, 250, 250);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        display: none;
+      }
+
+      .nav.open {
+        display: flex;
       }
     }
   }
