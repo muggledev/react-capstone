@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import productData from "../pages/Data";
 import "../../styles/pages/products.scss";
@@ -10,6 +10,7 @@ function Products() {
   const [sortField, setSortField] = useState("id");
   const [sortOrder, setSortOrder] = useState("asc");
   const [quantities, setQuantities] = useState({});
+  const [products, setProducts] = useState([]);
 
   const handleIncrease = (productId) => {
     setQuantities((prev) => ({
@@ -36,6 +37,13 @@ function Products() {
       alert("Please select at least one item.");
     }
   };
+
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products")
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data));
+  //   console.log(products);
+  // });
 
   return (
     <div className="products-page">

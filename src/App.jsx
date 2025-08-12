@@ -12,6 +12,7 @@ import NotFound from "./components/pages/NotFound";
 import { CartProvider } from "./components/pages/CartContext";
 
 import "./styles/pages/app.scss";
+import "./styles/common/common.scss";
 
 function App() {
   return (

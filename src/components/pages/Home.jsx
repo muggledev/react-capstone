@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/pages/home.scss";
 import cakeVideo from "../../assets/long-cake-decorating.mp4";
 import cupcake from "../../assets/cupcake.webp";
@@ -6,19 +7,21 @@ import cupcake from "../../assets/cupcake.webp";
 function Home() {
   return (
     <div className="home">
-      <video
-        className="hero-video"
-        src={cakeVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-      <div className="slogan">
-        <h1>
-          Whisk a little, shop a lot — <br />
-          Sprinkle on the magic you've got!
-        </h1>
+      <div className="hero-section">
+        <video
+          className="hero-video"
+          src={cakeVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <div className="slogan">
+          <h1>
+            Whisk a little, shop a lot — <br />
+            Sprinkle on the magic you've got!
+          </h1>
+        </div>
       </div>
       <div className="about-us">
         <h1>About Sprinkle & Whisk</h1>
@@ -79,7 +82,13 @@ function Home() {
         </div>
         <div className="shop-our-products-link">
           <p>
-            Click <a href="../pages/Products">HERE</a> to shop our products.
+            <p>
+              Click{" "}
+              <Link to="/products" className="shop-link">
+                HERE
+              </Link>{" "}
+              to shop our products.
+            </p>
           </p>
         </div>
       </section>

@@ -9,6 +9,16 @@ function Product() {
   const { id } = useParams();
   const product = productData.find((p) => p.id === parseInt(id));
   const [quantity, setQuantity] = useState(0);
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const toggleDescription = () => {
+    setShowFullDescription((prev) => !prev);
+  };
+
+  const truncatedDescription =
+    product.description.length > 150
+      ? product.description.slice(0, 150) + "..."
+      : product.description;
 
   if (!product) {
     return <div>Product not found.</div>;
@@ -43,7 +53,14 @@ function Product() {
           <p className="product-price">
             <strong>{product.price}</strong>
           </p>
-          <p className="product-description">{product.description}</p>
+          <p className="product-description">
+            {showFullDescription ? product.description : truncatedDescription}
+            {product.description.length > 50 && (
+              <span className="toggle-description" onClick={toggleDescription}>
+                {showFullDescription ? "Show less" : "Show more"}
+              </span>
+            )}
+          </p>
 
           <div className="quantity-controls">
             <button

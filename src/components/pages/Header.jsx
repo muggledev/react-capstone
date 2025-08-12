@@ -23,7 +23,7 @@ function Header() {
 
         <nav className={isMenuOpen ? "nav open" : "nav"}>
           <div className="nav-label">
-            <Link to="/home" onClick={toggleMenu}>
+            <Link to="/" onClick={toggleMenu}>
               HOME
             </Link>
           </div>

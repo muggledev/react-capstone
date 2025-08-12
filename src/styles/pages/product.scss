@@ -1,5 +1,5 @@
 .single-product-page {
-  padding: 2rem;
+  padding: 4rem;
   display: flex;
   justify-content: center;
   background-color: rgb(242, 228, 248);
@@ -30,7 +30,7 @@
 
     .product-price {
       font-weight: bold;
-      color: #b12704;
+      color: #fb2f8b;
       margin-bottom: 1rem;
     }
 
@@ -68,7 +68,9 @@
 
     .cart-button {
       padding: 0.75rem 1rem;
-      background-color: #28a745;
+      width: fit-content;
+      align-self: flex-start;
+      background-color: #67d681;
       color: white;
       border: none;
       font-weight: bold;
@@ -76,7 +78,23 @@
       cursor: pointer;
 
       &:hover {
-        background-color: #1e7e34;
+        background-color: #4bb864;
+      }
+    }
+    .product-description {
+      color: #444;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .toggle-description {
+      color: #fc62a8;
+      cursor: pointer;
+      font-weight: 500;
+      margin-left: 8px;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
